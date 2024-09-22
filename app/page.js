@@ -69,7 +69,7 @@ const HomePage = () => {
       {/* Phases of Project Development Section */}
       <div className="p-8 text-center bg-white rounded-lg shadow-md">
         <h1 className="text-2xl font-bold mb-4">Project Development Phases</h1>
-        <Link href="/project-phases">
+        <Link href="/phases">
           <span className="text-green-500 underline hover:text-green-700 text-lg font-semibold" onClick={() => router.push('/phases')}>
             Learn about the Phases of Project Development
           </span>
