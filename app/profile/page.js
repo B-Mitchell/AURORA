@@ -5,12 +5,13 @@ import { useSelector } from 'react-redux';
 
 const Page = () => {
   const router = useRouter();
-  const user_id = useSelector(state => state.user.user_id);
-  const email = useSelector(state => state.user.user_email);
-  const firstName = useSelector(state => state.user.first_name);
-  const lastName = useSelector(state => state.user.last_name);
-  const phoneNumber = useSelector(state => state.user.phone_number);
+  const user_id = useSelector((state) => state.user.user_id);
+  const email = useSelector((state) => state.user.user_email);
+  const firstName = useSelector((state) => state.user.first_name);
+  const lastName = useSelector((state) => state.user.last_name);
+  const phoneNumber = useSelector((state) => state.user.phone_number);
   const [loading, setLoading] = useState(true);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     if (!user_id) {
@@ -19,6 +20,12 @@ const Page = () => {
       setLoading(false);
     }
   }, [user_id, router]);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(user_id);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // Reset copy state after 2 seconds
+  };
 
   if (loading) {
     return (
@@ -53,6 +60,25 @@ const Page = () => {
           <span className="text-lg font-semibold text-gray-700">Phone Number:</span>
           <span className="text-lg text-gray-600">{phoneNumber}</span>
         </div>
+
+        {/* Display user_id and make it copiable */}
+        <div className="flex justify-between items-center mt-4">
+          <span className="text-lg font-semibold text-gray-700">User ID:</span>
+          <div className="flex items-center">
+            <span className="text-lg text-gray-600 mr-2">{user_id}</span>
+            <button
+              onClick={handleCopy}
+              className=" text-white px-2 py-1 rounded hover:bg-green-600 transition duration-200 bg-black"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+
+        {/* Show message when user_id is copied */}
+        {copied && (
+          <p className="text-green-500 mt-2 text-center">User ID copied to clipboard!</p>
+        )}
       </div>
 
       <div className="mt-6 flex flex-col space-y-3 w-full">
