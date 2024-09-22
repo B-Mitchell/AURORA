@@ -13,6 +13,10 @@ const MessagingPage = ({ params }) => {
 
   // Fetch user data
   const fetchUserData = async () => {
+    if (!currentUserId) {
+      router.push('/auth/login');
+      return
+    }
     setLoading(true); // Set loading to true
     const { data, error } = await supabase
       .from('users')

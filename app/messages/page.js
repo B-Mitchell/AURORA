@@ -12,6 +12,10 @@ const MessagingPage = () => {
 
   // Fetch all users
   const fetchUsers = async () => {
+    if (!currentUserId) {
+      router.push('/auth/login'); 
+      return
+    } 
     const { data, error } = await supabase.from('users').select('*');
     if (!error) setUsers(data);
     setLoading(false); // Set loading to false after fetching
