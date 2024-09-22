@@ -101,7 +101,7 @@ const Page = () => {
           >
             {/* User info */}
             <div className="flex items-center mb-3">
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 cursor-pointer" onClick={() => router.push(`/timeline/${post.user_id}`)}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -115,7 +115,7 @@ const Page = () => {
                   />
                 </svg>
               </div>
-              <p className="text-gray-800 font-semibold text-lg" onClick={() => router.push(`/timeline/${post.user_id}`)}>{userName}</p>
+              <p className="text-gray-800 underline cursor-pointer font-semibold text-lg" onClick={() => router.push(`/timeline/${post.user_id}`)}>{userName}</p>
             </div>
             {/* Post content */}
             <p className="text-gray-700 text-base mb-6 leading-relaxed">{post.content}</p>

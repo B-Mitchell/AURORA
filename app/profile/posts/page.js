@@ -12,6 +12,10 @@ const Page = () => {
 
   // Fetch all posts
   const fetchAllPosts = async () => {
+    if (!user_id) {
+      router.push('/auth/login');
+      return;
+    }
     setLoading(true);
     try {
       let { data, error } = await supabase.from('posts').select('*').eq('user_id', user_id);

@@ -10,13 +10,6 @@ const Navbar = () => {
     const user_id = useSelector(state => state.user.user_id);
     const [isOpen, setIsOpen] = useState(false); // State to handle mobile menu
 
-    // Check if user is logged out
-    useEffect(() => {
-      if (!user_id) {
-        router.push('/auth/login');
-      }
-    }, [user_id, router]);
-
     const handleLogout = () => {
       dispatch(logoutUser());
     };
