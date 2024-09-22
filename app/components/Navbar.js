@@ -36,7 +36,7 @@ const Navbar = () => {
             ) : (
               <>
                 <button className="text-[#4A7C4A] text-lg py-2" onClick={() => handleNavigation('/auth/login')}>Login</button>
-                <button className="bg-[#4A7C4A] text-white px-6 py-2 rounded-md text-lg">Sign Up</button>
+                <button className="bg-[#4A7C4A] text-white px-6 py-2 rounded-md text-lg" onClick={() => { handleNavigation('/auth/create_account'); }}>Sign Up</button>
               </>
             )}
           </div>
@@ -67,7 +67,7 @@ const Navbar = () => {
             ) : (
               <>
                 <button className="text-[#4A7C4A] text-lg py-2" onClick={() => { handleNavigation('/auth/login'); }}>Login</button>
-                <button className="bg-[#4A7C4A] text-white px-6 py-2 rounded-md text-lg">Sign Up</button>
+                <button className="bg-[#4A7C4A] text-white px-6 py-2 rounded-md text-lg" onClick={() => { handleNavigation('/auth/create_account'); }}>Sign Up</button>
               </>
             )}
           </div>
