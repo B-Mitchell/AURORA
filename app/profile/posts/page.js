@@ -54,7 +54,7 @@ const Page = () => {
   }
 
   if (posts.length === 0) {
-    return <div ><p className='text-[#4A7C4A] text-center mt-5'>you don't have a post yet, <a className='font-extrabold hover:cursor-pointer text-[#a1d8a1]' onClick={() => router.push('/timeline')}>send one.</a></p></div>;
+    return <div ><p className='text-[#4A7C4A] text-center mt-5'>you {`Don't`} have a post yet, <a className='font-extrabold hover:cursor-pointer text-[#a1d8a1]' onClick={() => router.push('/timeline')}>send one.</a></p></div>;
   }
 
   return (

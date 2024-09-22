@@ -87,7 +87,7 @@ const Login = () => {
         </button>
         
         <p className='text-center mt-5'>
-          Don't have an account? <span className='text-[#4A7C4A] cursor-pointer' onClick={() => router.push('/auth/signup')}>Sign up</span>
+        {`Don't`} have an account? <span className='text-[#4A7C4A] cursor-pointer' onClick={() => router.push('/auth/signup')}>Sign up</span>
         </p>
       </form>
     </div>
