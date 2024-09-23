@@ -160,7 +160,7 @@ const Page = () => {
       <PostComp isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <button
         onClick={() => setIsModalOpen(true)}
-        className="bg-green-700 text-white px-4 py-2 rounded-md fixed bottom-20 right-10 opacity-80 hover:opacity-100"
+        className="bg-green-700 text-white px-4 py-2 scale-125 rounded-md fixed bottom-16 right-10 opacity-80 hover:opacity-100"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
           <path fillRule="evenodd" d="M12 4a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H5a1 1 0 110-2h6V5a1 1 0 011-1z" clipRule="evenodd" />
