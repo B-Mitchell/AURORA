@@ -62,17 +62,17 @@ const Login = () => {
       <form onSubmit={handleSubmit} className='bg-white rounded-lg shadow-lg p-10 max-w-sm w-full'>
         <h1 className='text-3xl font-bold text-center text-[#4A7C4A] mb-6'>Login to Your Account</h1>
         
-        <label className='block mb-2 text-gray-700'>Email</label>
+        <label className='block mb-2 font-bold text-gray-700'>Email</label>
         <input
           type="email"
           value={email}
           onChange={(e) => setLoginEmail(e.target.value)}
           placeholder="eg: johnDoe@gmail.com"
           required
-          className='block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4A7C4A] transition'
+          className='block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4A7C4A] transition mb-3'
         />
         
-        <label className='block mb-2 text-gray-700'>Password</label>
+        <label className='block font-bold mb-2 text-gray-700'>Password</label>
         <input
           type="password"
           value={password}
