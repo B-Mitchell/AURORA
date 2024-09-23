@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '@/app/supabase';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/navigation';
 
 const MessagingPage = ({ params }) => {
+  const router = useRouter();
   const user_id = params.user; // The ID of the user you want to message
   const currentUserId = useSelector((state) => state.user.user_id); // Current user ID from Redux
   const [messages, setMessages] = useState([]);
@@ -13,10 +15,6 @@ const MessagingPage = ({ params }) => {
 
   // Fetch user data
   const fetchUserData = async () => {
-    if (!currentUserId) {
-      router.push('/auth/login');
-      return
-    }
     setLoading(true); // Set loading to true
     const { data, error } = await supabase
       .from('users')
@@ -56,6 +54,10 @@ const MessagingPage = ({ params }) => {
   };
 
   useEffect(() => {
+    if (!currentUserId) {
+      router.push('/auth/login');
+      return
+    }
     fetchMessages();
     fetchUserData();
   }, [currentUserId, user_id]);
