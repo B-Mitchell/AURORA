@@ -5,7 +5,7 @@ const ProjectPhases = () => {
 
     return (
         <div className="p-6">
-                <div className="w-[70%] m-auto">
+                <div className="w-[100%] m-auto">
                     <div className="bg-white rounded-lg p-6 shadow-lg">
                         <h2 className="text-xl font-bold mb-4">Project Phases</h2>
                         <div>
