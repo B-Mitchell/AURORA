@@ -148,7 +148,6 @@ const ProjectStages = () => {
             )}
 
             <h1 className="text-2xl font-bold mb-4">Available Projects</h1>
-
             {projects.length === 0 ? (
                 <p className='text-[#4A7C4A] text-center'>No projects available.</p>
             ) : (

@@ -15,7 +15,7 @@ const HomePage = () => {
           Welcome to Aurora, The platform for seamless collaboration
         </h1>
         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-[#4A7C4A]">
-          Let's build together
+          Let us build together
         </h2>
         {
           !user_id ? <><p className="text-lg text-gray-600 mb-8">
