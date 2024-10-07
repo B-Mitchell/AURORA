@@ -125,7 +125,12 @@ const Page = ({ params }) => {
         if (project.project_stage >= 5) {
             alert('The project is already at the final stage and cannot be advanced further.');
             return;
-        } 
+        }
+        if (allCompleted) {
+            alert('All participants must complete their tasks before moving to the next stage.');
+            return;
+        }
+        
         if (allCompleted) {
             const { data, error } = await supabase
                 .from('Projects')

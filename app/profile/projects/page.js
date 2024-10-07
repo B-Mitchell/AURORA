@@ -14,6 +14,7 @@ const ProjectStages = () => {
     const [description, setDescription] = useState('');
     const [showCreateProject, setShowCreateProject] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [creatingProject, setCreatingProject] = useState(false)
 
     const fetchProjects = async () => {
         setLoading(true);
@@ -41,6 +42,7 @@ const ProjectStages = () => {
 
     const createProject = async (e) => {
         e.preventDefault();
+        setCreatingProject(true)
 
         try {
             const { data, error } = await supabase
@@ -64,6 +66,8 @@ const ProjectStages = () => {
             }
         } catch (error) {
             console.log(error);
+        } finally {
+            setCreatingProject(false)
         }
     };
 
@@ -137,7 +141,7 @@ const ProjectStages = () => {
                             />
                         </div>
                         <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">
-                            Create Project
+                            {creatingProject ? 'creating project...' : 'Create Project'}
                         </button>
                     </form>
                 </div>
